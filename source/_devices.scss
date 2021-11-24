@@ -1,0 +1,14 @@
+@mixin breakpoint($type) {
+    @if $type == mobile{
+        @media (min-width: 320px){ @content}
+    }
+    @else if $type == laptop{
+        @media (min-width: 768px) {@content}
+    }
+    @else if $type == desktop{
+        @media (min-width: 1224px) {@content}
+    }
+    @else if $type == largescreen{
+        @media (min-width: 1824px) {@content}
+    }
+}

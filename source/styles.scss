@@ -1,0 +1,305 @@
+@import "config";
+@import "components";
+@import "devices";
+
+
+/*Avatar Section*/
+.avatar{
+    padding: 1rem;
+    .img{
+        justify-content: space-between;
+        align-items: center;
+        img{
+            max-width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+        }
+        ul{
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            white-space: nowrap;
+            li{
+             padding: 5px;
+             text-align: left;
+             &:hover{
+                 font-weight: bolder;
+             }
+            }
+        }
+    }
+    .content{
+        margin: 2rem 0;
+        span{
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            color: $mainTextColor;
+            font-weight: bolder;
+            max-width: 50%;
+            white-space: pre;
+        }
+        p{
+            line-height: 1.3;
+            font-size: calc(1rem - 2px);
+            font-weight: 300;
+            color: $mainTextColor;
+        }
+    }
+}
+
+/*main section*/
+main{
+    .addSection{
+        min-height: 10vmax;
+        input{
+            width: 90%;
+            margin: 10px auto;
+            border: 1px solid rgb(211, 211, 211);
+            box-shadow: 1px 1px 2px rgb(223, 223, 223);
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-bottom: 15px;
+            &:focus{
+                outline: none;
+            }
+        }
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .textarea{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 auto;
+            position: relative;
+            textarea{
+                width: 100%;
+                resize: none;
+                border: 1px solid rgb(211, 211, 211);
+                box-shadow: 1px 1px 2px rgb(223, 223, 223);
+                padding-top: 15px;
+                padding-left: 15px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            span{
+                color: $mainTextColor;
+                margin-top: 1rem;
+                text-align: right;
+            }
+            .line{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: rgb(32, 47, 255);
+                margin: 0;
+                max-width:100%;
+            }
+    }
+        .btns{
+            text-transform: capitalize;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1.5rem;
+            ul{
+                list-style: none;
+                margin: 10px 0 0 15px;
+                padding: 0;
+                flex-direction: column;
+                justify-content: space-around;
+                white-space: nowrap;
+                li{
+                    margin: 5px 0;
+                    color: $mainTextColor;
+                    cursor: pointer;
+                    p{
+                        display: inline;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+            button{
+                @include buttonComponents;
+                margin-right: 15px;
+                background-color: $submitBtnColor;
+                color: $white;
+                transition: transform .4s linear;
+                &:hover{
+                    outline: none;
+                    background-color: darken($color: $submitBtnColor, $amount: 5%);
+                    transform: scale(.98);
+                }
+            }
+        }
+    }
+    .showSection{
+        padding: 10px 15px;
+        margin: 2rem 0;
+        .card{
+            margin: 0 auto;
+            background: none;
+            //border-left: 2px solid $important;
+            box-shadow: 0 0 6px lightgray;
+            //padding: 15px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            position: relative;
+            min-width: 100%;
+            .header{
+                min-width: 100%;
+                display: flex;
+                justify-content: space-between;
+            .card-title{
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+                font-variant: small-caps;
+                font-weight: 800;
+                padding: 5px;
+                align-self: flex-start;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                margin-top: 10px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 30px;
+                    top: 10px;
+                    left: -10px;
+                    display: block;
+                    background-color: inherit;
+                    border-top-left-radius: 15px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 15px;
+                    top: 40px;
+                    left: -10px;
+                    display: block;
+                    background-color: inherit;
+                    filter: contrast(10%);
+                    border-bottom-left-radius: 15px;
+                    z-index: -1;
+                }
+            }
+            button{
+                align-self: center;
+                border: 1px solid $important;
+                background:transparent;
+                color: $mainTextColor;
+                padding: 5px 15px;
+                transition: background-color .3s linear;
+                outline: none;
+                margin-right: 10px;
+                &:hover{
+                    background-color: $important;
+                    color: $white;
+                    outline: none;
+                }
+            }
+            }
+            .card-content{
+                line-height: 1.2;
+                color: $mainTextColor;
+                font-weight: 400;
+                margin: 21px 15px;
+                width: 90%;
+                .additional{
+                    justify-content: space-between;
+                    align-items: center;
+                    .proierty,
+                    .ccDate{
+                        color: #555;
+                        font-weight: 200;
+                        font-family: monospace;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(laptop){
+    .avatar{
+        .img{
+            justify-content: space-around !important;
+        }
+        ul{
+            flex-direction: row !important;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content{
+            margin: 2rem 4rem !important;
+        }
+    }
+main{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    .addSection{
+        max-height: 17rem;
+    }
+    .showSection{
+        margin: 0 !important;
+        padding: 0 !important;
+        .card{
+            max-height: 12rem !important;
+            border-bottom-left-radius: 10px;
+        }
+    }
+}
+
+@include breakpoint(desktop){
+    .avatar{
+        .content{
+            position: relative;
+            width: fit-content;
+            padding: 10px;
+            p{
+                width: 40rem;
+                line-height: 1.5;
+                letter-spacing: .5px;
+                font-weight: 500;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 20%;
+                height: 2px;
+                background: #333;
+                border-radius: 4px;
+                transition: .4s;
+            }
+            &:hover::after{
+                transform-origin: left;
+                transform: rotate(-90deg);
+                width: 10%;
+                background: linear-gradient(45deg, $important,$lessImportant,$notNow);
+            }
+        }
+    }
+    main{
+        .addSection{
+            .btns{
+                justify-content: space-around !important;
+                ul{
+                    flex-direction: row !important;
+                    min-width: 70%;
+                }
+            }
+        }
+    }
+}
+}

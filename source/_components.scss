@@ -1,0 +1,58 @@
+@mixin buttonComponents{
+    font-weight: bold;
+    border: none;
+    outline: none;
+    padding: 1rem 12px;
+    border-radius: 20px;
+}
+
+.bg-red{
+    color: lighten($color: $important, $amount: 50%);
+    background-color: $important;
+}
+.bg-blue{
+    color: lighten($color: $lessImportant, $amount: 50%);
+    background-color: $lessImportant;
+}
+.bg-green{
+    color: lighten($color: $notNow, $amount: 50%) !important;
+    background-color: $notNow !important;
+}
+.border-red{
+    border-left: 2px solid $important;
+}
+.border-blue{
+    border-left: 2px solid $lessImportant;
+}
+.border-green{
+    border-left: 2px solid $notNow;
+}
+.red,.blue,.green{margin-right: 3px;display: inline-block;}
+.cred{color: $important !important;}
+.cyellow{color: $lessImportant !important;}
+.cblue{color: $notNow !important;}
+.active{font-weight: bold;}
+
+.red{
+    background: $important;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.blue{
+    background: $lessImportant;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.green{
+    background: $notNow;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.hidden{
+    transform: scale(0);
+    transition: transform .3s ease-in-out;
+}

@@ -1,0 +1,52 @@
+/*Variables*/
+$submitBtnColor: #4643ff;
+$mainTextColor: #333;
+$white: rgb(255, 255, 255);
+$important: rgb(255, 32, 32);
+$lessImportant: rgb(32, 47, 255);
+$notNow: rgb(32, 255, 32);
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+    font-family: monospace;
+    color: $mainTextColor;
+}
+
+/*Container*/
+.container{display: grid;padding: 0;}
+
+/*avatar*/
+.avatar{
+    .img{
+        display: flex;
+        ul{
+            display: flex;
+        }
+    }
+}
+
+/*main section*/
+main{
+    .addSection{
+        display: flex;
+        .btns{
+            display: flex;
+            ul{
+                display: flex;
+            }
+        }
+    }
+    .showSection{
+        display: grid;
+        .card{
+            display: flex;
+            .additional{display: flex;}
+        }
+        & > .card:not(:last-of-type){
+            margin-bottom: 1rem !important;
+        }
+    }
+}

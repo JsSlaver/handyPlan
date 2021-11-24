@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="avatar">
+            <div class="img">
+                <img src="imgs/1.jpg" alt="">
+                <ul>
+                    <li data-custom="normal"><a href="#">all</a></li>
+                    <li data-custom="cred"><a href="#">important</a></li>
+                    <li data-custom="cyellow"><a href="#">less important</a></li>
+                    <li data-custom="cblue"><a href="#">not now</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <span>Unknown one</span>
+                <p>This site is useless but it exist :),it's just for practice.You can add your plans and rated them important, less important and not now, plans will be stored on your device.Good luck my friend
+                </p>
+            </div>
+        </div> <!--End avatar-->
+
+        <main>
+            <div class="addSection">
+                <input type="text" id="title" placeholder="title go here"></input>
+                <div class="textarea">
+                    <span class="line"></span>
+                    <textarea id="content" cols="30" rows="10" placeholder="content go here, note : you can type 200 words only"></textarea>
+                    <span id="numberOfWords"></span>
+                </div>
+                <div class="btns">
+                    <ul>
+                        <li class="proierty">
+                            <span class="red" data-proierty="red"></span>
+                            <p data-color="#ff9696">important</p>
+                        </li>
+                        <li class="proierty">
+                            <span class="" data-proierty="blue"></span>
+                            <p data-color="#989fff">less important</p>
+                        </li>
+                        <li class="proierty">
+                            <span data-proierty="green"></span>
+                            <p data-color="#95ff95">not now</p>
+                        </li>
+                    </ul>
+                    <button id="add">Add to list</button>
+                </div>
+            </div><!--End addSection-->
+
+            <div class="showSection">
+                <h1 style="text-align:center;color:#333">Add your plans</h1>
+            </div> <!--End showSection-->
+        </main>
+    </div><!--End container-->
+    <script src="js/main.js"></script>
+</body>
+</html>
