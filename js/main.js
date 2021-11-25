@@ -299,10 +299,8 @@ function filterItems(item){
         let childproierty = document.querySelectorAll('.showSection > div .additional')[i].firstElementChild;
         if(childproierty.innerText != filter){
             childproierty.offsetParent.classList.add('hidden');
-            childproierty.offsetParent.style.height = '0';
         }else{
             childproierty.offsetParent.classList.remove('hidden');
-            childproierty.offsetParent.style.height = 'auto';
         }
     }
     if(filter == 'all'){
