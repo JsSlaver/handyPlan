@@ -294,20 +294,28 @@ function deleteItem(){
 
 function filterItems(item){
     let parentLength = Array.from(document.querySelectorAll('.showSection > div'));
-    let filter = item.innerText.toLowerCase();
-    for(let i=0; i < parentLength.length;i++){
-        let childproierty = document.querySelectorAll('.showSection > div .additional')[i].firstElementChild;
-        if(childproierty.innerText != filter){
-            childproierty.offsetParent.classList.add('hidden');
-        }else{
-            childproierty.offsetParent.classList.remove('hidden');
-        }
-    }
-    if(filter == 'all'){
-        for(let i=0; i < parentLength.length;i++){
-            parentLength.forEach(element => {
-                element.classList.remove('hidden');
-            })
-        }
-    }
+    let filterBtn = item.innerText.toLowerCase();
+    // This is old version of filtering
+    // for(let i=0; i < parentLength.length;i++){
+    //     let childproierty = document.querySelectorAll('.showSection > div .additional')[i].firstElementChild;
+    //     if(childproierty.innerText != filter){
+    //         childproierty.offsetParent.classList.add('hidden');
+    //     }else{
+    //         childproierty.offsetParent.classList.remove('hidden');
+    //     }
+    // }
+    // if(filter == 'all'){
+    //     for(let i=0; i < parentLength.length;i++){
+    //         parentLength.forEach(element => {
+    //             element.classList.remove('hidden');
+    //         })
+    //     }
+    // }
+    // This is new version with es6
+    parentLength.forEach(element => {
+        let filterInnerText = element.childNodes[1].lastElementChild.firstElementChild;
+        let filterOffsetParent = filterInnerText.offsetParent;
+        filterInnerText.innerText !== filterBtn ? filterOffsetParent.classList.add('hidden') : filterOffsetParent.classList.remove('hidden');
+    })
+    filterBtn === 'all' ? parentLength.forEach(element => element.classList.remove('hidden')) : false;
 }
